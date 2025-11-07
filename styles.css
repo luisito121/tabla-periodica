@@ -1,0 +1,198 @@
+/* Estilos generales */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    overflow-x: hidden;
+}
+
+.pantalla {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.oculto { display: none !important; }
+
+.contenido-inicio {
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-animado {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 20px #fff, 0 0 30px #00ffcc; }
+    to { text-shadow: 0 0 30px #fff, 0 0 40px #00ffcc; }
+}
+
+.btn-principal, .btn-secundario {
+    background: #00d2ff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.3s;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-principal:hover, .btn-secundario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 20px 20px;
+    flex-wrap: wrap;
+}
+
+#volver-inicio {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.grid-tabla {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    gap: 4px;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.celda {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 10px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.celda:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.15);
+    z-index: 10;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.celda.vacia {
+    background: transparent;
+    border: none;
+    cursor: default;
+}
+
+/* Categorías con colores reales */
+.celda.alcalino { background: #ff9a9e; color: #000; }
+.celda.alcalinoterreo { background: #a8e6cf; color: #000; }
+.celda.metal-transicion { background: #ffd93d; color: #000; }
+.celda.otro-metal { background: #c7ceea; color: #000; }
+.celda.metaloides { background: #ff6b6b; color: #fff; }
+.celda.no-metal { background: #4ecdc4; color: #000; }
+.celda.gas-noble { background: #a29bfe; color: #000; }
+.celda.lantanidos { background: #fd79a8; color: #000; }
+.celda.actínidos { background: #fdcb6e; color: #000; }
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal-contenido {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 500px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cerrar, .cerrar-quiz {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #aaa;
+    font-weight: bold;
+}
+
+#info-elemento h2 { margin-top: 0; color: #1e3c72; }
+#info-elemento img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pregunta { margin: 20px 0; text-align: left; }
+.opciones { display: flex; flex-direction: column; gap: 10px; }
+.opciones button {
+    padding: 12px;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1em;
+}
+.opciones button:hover {
+    background: #00d2ff;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-tabla { grid-template-columns: repeat(9, 1fr); gap: 2px; }
+    .titulo-animado { font-size: 2em; }
+    .contenido-inicio { padding: 20px; }
+}
