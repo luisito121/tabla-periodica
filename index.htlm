@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periódica Interactiva</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+    <div id="inicio" class="pantalla">
+        <div class="contenido-inicio">
+            <h1 class="titulo-animado">Tabla Periódica Interactiva</h1>
+            <p>Explora los 118 elementos químicos, sus propiedades, imágenes reales y ¡desafíate con quizzes por niveles!</p>
+            <button id="entrar-btn" class="btn-principal">Entrar a la Tabla</button>
+        </div>
+    </div>
+
+    <!-- Tabla principal -->
+    <div id="app" class="pantalla oculto">
+        <header>
+            <h1>Tabla Periódica de los Elementos</h1>
+            <button id="volver-inicio">Inicio</button>
+        </header>
+        <div id="tabla-periodica" class="grid-tabla"></div>
+    </div>
+
+    <!-- Modal de información del elemento -->
+    <div id="modal-info" class="modal oculto">
+        <div class="modal-contenido">
+            <span class="cerrar">×</span>
+            <div id="info-elemento"></div>
+            <button id="quiz-btn" class="btn-secundario">Hacer Quiz</button>
+        </div>
+    </div>
+
+    <!-- Modal de Quiz -->
+    <div id="modal-quiz" class="modal oculto">
+        <div class="modal-contenido">
+            <span class="cerrar-quiz">×</span>
+            <h2 id="nivel-quiz">Quiz: Nivel Fácil</h2>
+            <div id="preguntas-quiz"></div>
+            <button id="iniciar-quiz" class="btn-principal">Iniciar Quiz</button>
+            <button id="siguiente-preg" class="btn-secundario oculto">Siguiente</button>
+            <div id="resultado-quiz" class="oculto"></div>
+        </div>
+    </div>
+
+    <script src="data_es.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
